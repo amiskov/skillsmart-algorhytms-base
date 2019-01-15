@@ -2,34 +2,16 @@ import unittest
 from linked_list import Node
 from linked_list import LinkedList
 
-
-def create_linked_list_from_digits(digits):
-    nodes = []
-    linked_list = LinkedList()
-
-    for digit in digits:
-        nodes.append(Node(digit))
-
-    for idx, node in enumerate(nodes):
-        if idx != len(nodes) - 1:
-            node.next = nodes[idx + 1]
-        else:
-            node.next = None
-        linked_list.add_in_tail(node)
-
-    return linked_list
-
-
 class TestLinkedList(unittest.TestCase):
     def setUp(self):
         """
         Creates some linked lists for tests.
         """
-        self.empty_linked_list = create_linked_list_from_digits([])
-        self.one_node_linked_list = create_linked_list_from_digits([1])
-        self.small_linked_list = create_linked_list_from_digits([3, 13, 23, 33, 43, 53])
-        self.large_linked_list = create_linked_list_from_digits(range(100))
-        self.duplicated_linked_list = create_linked_list_from_digits([55, 85, 55, 85, 95, 95])
+        self.empty_linked_list = LinkedList.from_list([])
+        self.one_node_linked_list = LinkedList.from_list([1])
+        self.small_linked_list = LinkedList.from_list([3, 13, 23, 33, 43, 53])
+        self.large_linked_list = LinkedList.from_list(range(100))
+        self.duplicated_linked_list = LinkedList.from_list([55, 85, 55, 85, 95, 95])
 
     def test_add_in_tail(self):
         self.empty_linked_list.add_in_tail(Node(63))

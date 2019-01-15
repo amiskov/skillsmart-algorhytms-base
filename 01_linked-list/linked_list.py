@@ -5,6 +5,23 @@ class Node:
 
 
 class LinkedList:
+    @staticmethod
+    def from_list(list):
+        nodes = []
+        linked_list = LinkedList()
+
+        for digit in list:
+            nodes.append(Node(digit))
+
+        for idx, node in enumerate(nodes):
+            if idx != len(nodes) - 1:
+                node.next = nodes[idx + 1]
+            else:
+                node.next = None
+            linked_list.add_in_tail(node)
+
+        return linked_list
+
     def __init__(self):
         self.head = None
         self.tail = None
