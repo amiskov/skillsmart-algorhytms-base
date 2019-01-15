@@ -18,21 +18,21 @@ def sum_lists(l1, l2):
     for idx, l in enumerate(l1_list):
         result.append(l + l2_list[idx])
 
-    return result
+    return LinkedList.from_list(result)
 
 
-l1 = LinkedList.from_list([3, 13, 23, 33, 43, 53])
-l2 = LinkedList.from_list([5, 15, 25, 35, 45, 55])
-l3 = LinkedList.from_list([13, 33, 53])
+linked_list_1 = LinkedList.from_list([3, 13, 23, 33, 43, 53])
+linked_list_2 = LinkedList.from_list([5, 15, 25, 35, 45, 55])
+linked_list_3 = LinkedList.from_list([13, 33, 53])
 
-l_empty1 = LinkedList.from_list([])
-l_empty2 = LinkedList.from_list([])
+empty_linked_list_1 = LinkedList.from_list([])
+empty_linked_list_2 = LinkedList.from_list([])
 
 
 def test_sum_lists():
-    assert sum_lists(l1, l2) == [8, 28, 48, 68, 88, 108], "Should be [8, 28, 48, 68, 88, 108]"
-    assert sum_lists(l_empty1, l_empty2) == [], "Should be []"
-    assert sum_lists(l1, l3) is None, "Should be None"
+    assert sum_lists(linked_list_1, linked_list_2).to_list() == [8, 28, 48, 68, 88, 108], "Should be [8, 28, 48, 68, 88, 108]"
+    assert sum_lists(empty_linked_list_1, empty_linked_list_2).to_list() == [], "Should be []"
+    assert sum_lists(linked_list_1, linked_list_3) is None, "Should be None"
 
 
 if __name__ == "__main__":
