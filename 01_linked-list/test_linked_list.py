@@ -2,6 +2,7 @@ import unittest
 from linked_list import Node
 from linked_list import LinkedList
 
+
 class TestLinkedList(unittest.TestCase):
     def setUp(self):
         """

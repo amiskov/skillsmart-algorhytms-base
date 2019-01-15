@@ -30,7 +30,8 @@ empty_linked_list_2 = LinkedList.from_list([])
 
 
 def test_sum_lists():
-    assert sum_lists(linked_list_1, linked_list_2).to_list() == [8, 28, 48, 68, 88, 108], "Should be [8, 28, 48, 68, 88, 108]"
+    assert sum_lists(linked_list_1, linked_list_2).to_list() == [8, 28, 48, 68, 88, 108], \
+        "Should be [8, 28, 48, 68, 88, 108]"
     assert sum_lists(empty_linked_list_1, empty_linked_list_2).to_list() == [], "Should be []"
     assert sum_lists(linked_list_1, linked_list_3) is None, "Should be None"
 
