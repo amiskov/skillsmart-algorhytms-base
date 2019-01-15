@@ -22,7 +22,7 @@ def sum_lists(l1, l2):
 
 
 l1 = LinkedList.from_list([3, 13, 23, 33, 43, 53])
-l2 = LinkedList.from_list([3, 13, 23, 33, 43, 53])
+l2 = LinkedList.from_list([5, 15, 25, 35, 45, 55])
 l3 = LinkedList.from_list([13, 33, 53])
 
 l_empty1 = LinkedList.from_list([])
@@ -30,7 +30,7 @@ l_empty2 = LinkedList.from_list([])
 
 
 def test_sum_lists():
-    assert sum_lists(l1, l2) == [6, 26, 46, 66, 86, 106], "Should be [6, 26, 46, 66, 86, 106]"
+    assert sum_lists(l1, l2) == [8, 28, 48, 68, 88, 108], "Should be [8, 28, 48, 68, 88, 108]"
     assert sum_lists(l_empty1, l_empty2) == [], "Should be []"
     assert sum_lists(l1, l3) is None, "Should be None"
 
