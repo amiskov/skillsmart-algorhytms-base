@@ -68,9 +68,10 @@ class LinkedList:
             if not all:
                 break
 
-            current = previous.next
-
-        return self
+            if previous is not None:
+                current = previous.next
+            else:
+                break
 
     def clean(self):
         self.head = None
