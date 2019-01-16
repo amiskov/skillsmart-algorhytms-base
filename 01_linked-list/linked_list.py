@@ -67,6 +67,11 @@ class LinkedList:
         return found_nodes
 
     def delete(self, val, all=False):
+        while self.head is not None and self.head.value == val:
+            self.head = self.head.next
+            if not all:
+                return
+
         current = self.head
         previous = None
 

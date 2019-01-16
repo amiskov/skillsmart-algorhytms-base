@@ -75,6 +75,10 @@ class TestLinkedList(unittest.TestCase):
         self.duplicated_linked_list.delete(55)
         self.assertEqual([85, 55, 85, 95, 95], self.duplicated_linked_list.to_list())
 
+        duplicated_in_tail = LinkedList.from_list([22, 22, 22])
+        duplicated_in_tail.delete(22)
+        self.assertListEqual([22, 22], duplicated_in_tail.to_list())
+
     def test_delete_all(self):
         self.empty_linked_list.delete(1, True)
         self.assertIs(None, self.empty_linked_list.head)
@@ -85,6 +89,10 @@ class TestLinkedList(unittest.TestCase):
 
         self.duplicated_linked_list.delete(55, True)
         self.assertEqual([85, 85, 95, 95], self.duplicated_linked_list.to_list())
+
+        duplicated_in_tail = LinkedList.from_list([22, 22, 22])
+        duplicated_in_tail.delete(22, True)
+        self.assertListEqual([], duplicated_in_tail.to_list())
 
     def test_clean(self):
         self.assertEqual(0, self.empty_linked_list.clean().len())
