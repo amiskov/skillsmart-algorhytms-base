@@ -86,6 +86,9 @@ class LinkedList:
             if not all:
                 break
 
+        if self.tail is not None and self.tail.value == val:
+            self.tail = previous
+
     def clean(self):
         self.head = None
         self.tail = None
@@ -106,7 +109,11 @@ class LinkedList:
         if after_node is not None:
             new_node.next = after_node.next
             after_node.next = new_node
-            return self
+
+            if after_node is self.tail:
+                self.tail = new_node
+
+            return
 
         if self.head is None:
             self.add_in_tail(new_node)
